@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic.data
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-import androidx.work.WorkInfo
-import kotlinx.coroutines.flow.Flow
+buildscript {
+    ext {
+        compose_compiler_version = '1.4.6'
+        lifecycle_version = '2.6.1'
+    }
+}
 
-interface BluromaticRepository {
-    val outputWorkInfo: Flow<WorkInfo?>
-    fun applyBlur(blurLevel: Int)
-    fun cancelWork()
+plugins {
+    id 'com.android.application' version '8.0.0' apply false
+    id 'com.android.library' version '8.0.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
 }
