@@ -42,7 +42,8 @@ class WorkerInstrumentationTest {
 
     @Test
     fun cleanupWorker_doWork_resultSuccess() {
-        val worker = TestListenableWorkerBuilder<CleanupWorker>(context).build()
+        val worker = TestListenableWorkerBuilder<CleanupWorker>(context)
+            .build()
         runBlocking {
             val result = worker.doWork()
             assertTrue(result is ListenableWorker.Result.Success)
